@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "lint": "tsc --noEmit",
     "preview": "vite preview"
   },
   "dependencies": {
     "react-dom": "^19.2.4",
     "react": "^19.2.4",
-    "xlsx": "0.18.5"
+    "xlsx": "0.18.5",
+    "docx": "9.1.0",
+    "file-saver": "2.0.5"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

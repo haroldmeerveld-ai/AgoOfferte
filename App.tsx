@@ -1,26 +1,20 @@
 
 import React, { useState, useCallback } from 'react';
 import { Quotation } from './types';
-import { EMPTY_QUOTATION } from './constants';
+import { getInitialQuotation } from './constants';
 import Dashboard from './components/Dashboard';
 import QuotationWizard from './components/QuotationWizard';
 
 const App: React.FC = () => {
   const [view, setView] = useState<'dashboard' | 'wizard'>('dashboard');
-  const [currentQuotation, setCurrentQuotation] = useState<Quotation>(EMPTY_QUOTATION);
+  const [currentQuotation, setCurrentQuotation] = useState<Quotation>(getInitialQuotation());
 
   const startNewQuotation = useCallback(() => {
-    const newQuote = { 
-      ...EMPTY_QUOTATION, 
-      id: crypto.randomUUID(),
-      number: 'OFF-' + (new Date().getFullYear()) + '-' + Math.floor(1000 + Math.random() * 9000)
-    };
-    setCurrentQuotation(newQuote);
+    setCurrentQuotation(getInitialQuotation());
     setView('wizard');
   }, []);
 
   const handleSave = useCallback((quote: Quotation) => {
-    // We don't actually save anywhere per user request, just return to dashboard
     setView('dashboard');
   }, []);
 

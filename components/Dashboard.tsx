@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Logo } from './Logo';
 
 interface DashboardProps {
   onNewQuotation: () => void;
@@ -12,11 +13,11 @@ const Dashboard: React.FC<DashboardProps> = ({ onNewQuotation }) => {
       <div className="bg-white rounded-3xl shadow-xl p-16 text-center border border-gray-100 flex flex-col items-center max-w-2xl w-full relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-3 bg-primary"></div>
         
-        <div className="w-24 h-24 bg-brandCream rounded-3xl flex items-center justify-center mb-8 shadow-inner">
-          <i className="fa-solid fa-file-invoice-dollar text-4xl text-primary"></i>
+        <div className="mb-8">
+          <Logo />
         </div>
         
-        <h1 className="text-5xl font-black text-gray-900 mb-4 tracking-tight">Agonatura offerte tool</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Offerte Tool</h1>
         <p className="text-gray-500 mb-12 text-lg font-medium leading-relaxed">
           Ontwerp en beheer professionele offertes in enkele minuten.<br/>
           Start direct met een nieuwe berekening.
@@ -31,12 +32,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onNewQuotation }) => {
         </button>
       </div>
 
-      <div className="mt-12 flex gap-8 items-center opacity-40 grayscale grayscale-100">
-        <img 
-          src="https://agonatura.nl/wp-content/uploads/2021/04/logo-ago-natura.png" 
-          alt="Ago Natura Logo" 
-          className="h-12 w-auto object-contain"
-        />
+      <div className="mt-12 flex gap-8 items-center opacity-40 grayscale">
+         <span className="text-[10px] font-bold tracking-[0.5em] text-primary uppercase">Kwaliteit in zorg</span>
       </div>
     </div>
   );

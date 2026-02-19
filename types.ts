@@ -23,4 +23,5 @@ export interface Quotation {
   subject: string;
   items: LineItem[];
   notes: string;
+  signature?: string;
 }

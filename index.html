@@ -7,7 +7,7 @@
     <title>Agonatura offerte tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- PDF Generation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
@@ -15,10 +15,16 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#29543C', // Donkergroen
-                        secondary: '#68A87C', // Lichtgroen
-                        brandCream: '#F5F5E8', // Zacht crème
-                        brandText: '#333333',
+                        primary: '#29543C', // Deep Green
+                        secondary: '#68A87C', // Leaf Green
+                        brandGray: '#F1F3F2',
+                        brandText: '#1A1A1A',
+                        brandMuted: '#666666',
+                        brandCream: '#F9F9F0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mont: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
@@ -27,25 +33,31 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-            color: #333333;
+            background-color: #f8fafc;
+            color: #1A1A1A;
         }
         .excel-input {
-            background-color: #F5F5E8;
-            border: 1px solid #DDDDDD;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
             transition: all 0.2s;
         }
         .excel-input:focus {
-            background-color: #ffffff;
             outline: 2px solid #68A87C;
             border-color: transparent;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
         }
         @media print {
             .no-print { display: none !important; }
             .print-only { display: block !important; }
             body { background-color: white; }
         }
-        /* Custom scrollbar for a professional look */
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
@@ -56,9 +68,6 @@
             background: #29543C;
             border-radius: 10px;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #68A87C;
-        }
     </style>
 <script type="importmap">
 {
@@ -66,7 +75,9 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
     "react/": "https://esm.sh/react@^19.2.4/",
-    "xlsx": "https://esm.sh/xlsx@0.18.5"
+    "xlsx": "https://esm.sh/xlsx@0.18.5",
+    "docx": "https://esm.sh/docx@9.1.0",
+    "file-saver": "https://esm.sh/file-saver@2.0.5"
   }
 }
 </script>
